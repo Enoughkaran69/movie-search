@@ -215,7 +215,7 @@
 
     if (searchText && apiKey) {
         const encodedSearchText = encodeURIComponent(searchText); // Encode the search text
-        const apiUrl =  `https://www.omdbapi.com/?s=${searchText}&apikey=${apiKey}`;
+        const apiUrl =  `https://www.omdbapi.com/?s=${searchText}&apikey=79a38498`;
 
       fetchWithTimeout(apiUrl)
 
@@ -301,7 +301,7 @@ function displayMovies(movies) {
 // Function to fetch and display seasons for a series
 function displaySeasons(imdbID) {
   alertZreset()
-  fetchWithTimeout(`https://www.omdbapi.com/?i=${imdbID}&apikey=${apiKey}`, 5000)
+  fetchWithTimeout(`https://www.omdbapi.com/?i=${imdbID}&apikey=79a38498`, 5000)
      
     .then(data => {
       const seasons = data.totalSeasons;
@@ -330,14 +330,14 @@ function displaySeasons(imdbID) {
 // Function to fetch and display episodes for a specific season
 function displayEpisodes(imdbID, seasonNumber) {
   alertZreset()
-  fetchWithTimeout(`https://www.omdbapi.com/?i=${imdbID}&Season=${seasonNumber}&apikey=${apiKey}`)
+  fetchWithTimeout(`https://www.omdbapi.com/?i=${imdbID}&Season=${seasonNumber}&apikey=79a38498`)
      
     .then(data => {
       const episodes = data.Episodes;
       let episodePromises = []; // Array to store episode fetch promises
 
       episodes.forEach(episode => {
-        const promise = fetchWithTimeout(`https://www.omdbapi.com/?i=${episode.imdbID}&apikey=${apiKey}`)
+        const promise = fetchWithTimeout(`https://www.omdbapi.com/?i=${episode.imdbID}&apikey=79a38498`)
            
           .then(episodeData => episodeData);
         
@@ -413,7 +413,7 @@ document.querySelector('.movie-container').addEventListener('click', function(ev
   if (target.classList.contains('back-btn')) {
     const searchText = document.getElementById("movie-input").value; // Get the search text
     const encodedSearchText = encodeURIComponent(searchText); // Encode the search text
-    const apiUrl = `https://www.omdbapi.com/?s=${encodedSearchText}&apikey=${apiKey}`;
+    const apiUrl = `https://www.omdbapi.com/?s=${encodedSearchText}&apikey=79a38498`;
 
     fetchWithTimeout(apiUrl)
        
@@ -441,7 +441,7 @@ document.getElementById("message-form").addEventListener("submit", function(even
 
   if (searchText && apiKey) {
     const encodedSearchText = encodeURIComponent(searchText); // Encode the search text
-    const apiUrl = `https://www.omdbapi.com/?s=${encodedSearchText}&apikey=${apiKey}`;
+    const apiUrl = `https://www.omdbapi.com/?s=${encodedSearchText}&apikey=79a38498`;
 
     fetchWithTimeout(apiUrl)
        
@@ -494,7 +494,7 @@ document.getElementById("message-form").addEventListener("submit", function(even
       page++;
       const apiKey = getSavedApiKeyFromCookies();
       const searchText = document.getElementById("movie-input").value;
-      const apiUrl = `https://www.omdbapi.com/?s=${searchText}&page=${page}&apikey=${apiKey}`;
+      const apiUrl = `https://www.omdbapi.com/?s=${searchText}&page=${page}&apikey=79a38498`;
       fetchMovies(apiUrl);
     });
   
@@ -505,7 +505,7 @@ document.getElementById("message-form").addEventListener("submit", function(even
         page--;
         const apiKey = getSavedApiKeyFromCookies();
         const searchText = document.getElementById("movie-input").value;
-        const apiUrl = `https://www.omdbapi.com/?s=${searchText}&page=${page}&apikey=${apiKey}`;
+        const apiUrl = `https://www.omdbapi.com/?s=${searchText}&page=${page}&apikey=79a38498`;
         fetchMovies(apiUrl);
       }
     });
@@ -520,7 +520,7 @@ document.getElementById("message-form").addEventListener("submit", function(even
         page = 1; // Reset page number on new search
         const apiKey = getSavedApiKeyFromCookies();
         const searchText = document.getElementById("movie-input").value;
-        const apiUrl = `https://www.omdbapi.com/?s=${searchText}&page=${page}&apikey=${apiKey}`;
+        const apiUrl = `https://www.omdbapi.com/?s=${searchText}&page=${page}&apikey=79a38498`;
         fetchMovies(apiUrl);
       });
     });
